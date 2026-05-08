@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,48 @@
 </head>
 <body>
     <main class="dashboard">
+        <section class="control-section">
+            <div class="control-buttons">
+                <button id="add-btn">아기 사자 추가</button>
+                <button id="delete-btn">마지막 아기 사자 삭제</button>
+            </div>
+            <p class="count-text">총 <span id="total-count">0</span>명</p>
+        </section>
+
+        <section id="form-section" class="form-section hidden">
+            <form id="add-form">
+                <div class="form-group">
+                    <input type="text" id="form-name" placeholder="이름">
+                    <select id="form-part">
+                        <option value="">파트 선택</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Design">Design</option>
+                    </select>
+                </div>
+                <input type="text" id="form-skills" placeholder="관심 기술 (쉼표로 구분)">
+                <input type="text" id="form-one-liner" placeholder="한 줄 소개">
+                <textarea id="form-intro" placeholder="자기소개"></textarea>
+                <div class="form-group">
+                    <input type="email" id="form-email" placeholder="이메일">
+                    <input type="tel" id="form-phone" placeholder="전화번호">
+                </div>
+                <input type="text" id="form-website" placeholder="웹사이트">
+                <input type="text" id="form-motto" placeholder="한 마디">
+                
+                <div class="form-btns">
+                    <button type="submit" id="submit-btn">추가하기</button>
+                    <button type="button" id="cancel-btn">취소</button>
+                </div>
+            </form>
+        </section>
+
         <section class="summary-section">
-            <div class="summary-grid">
+            <div id="summary-grid" class="summary-grid">
                 <article class="card-summary me">
                     <div class="image-wrapper">
-                        <img src="/media/girl1.png" alt="박효연 프로필">
-                        <span class="badge">Me</span> 
+                        <img src="/media/girl1.png" alt="박효연">
+                        <span class="badge">HTML/CSS</span>
                     </div>
                     <div class="card-content">
                         <h3 class="name">박효연</h3>
@@ -21,104 +57,13 @@
                         <p class="one-liner">이건 나</p>
                     </div>
                 </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/girl2.png" alt="심민서 프로필">
-                        <span class="badge">Friend</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">심민서</h3>
-                        <p class="part">Frontend</p>
-                        <p class="one-liner">내 친구 민서</p>
-                    </div>
-                </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/girl3.png" alt="정주영 프로필">
-                        <span class="badge">Friend</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">정주영</h3>
-                        <p class="part">Student</p>
-                        <p class="one-liner">내 친구 주영이</p>
-                    </div>
-                </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/girl4.png" alt="조예은 프로필">
-                        <span class="badge">Friend</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">조예은</h3>
-                        <p class="part">Student</p>
-                        <p class="one-liner">내 친구 예은이</p>
-                    </div>
-                </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/boy1.png" alt="김연지 프로필">
-                        <span class="badge">Friend</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">김연지</h3>
-                        <p class="part">Design</p>
-                        <p class="one-liner">우리팀 연지</p>
-                    </div>
-                </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/boy2.png" alt="이제혁 프로필">
-                        <span class="badge">Senior</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">이제혁</h3>
-                        <p class="part">Backend</p>
-                        <p class="one-liner">실감 실험실 실장 실실실</p>
-                    </div>
-                </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/boy3.png" alt="홍길동 프로필">
-                        <span class="badge">Friend</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">홍길동</h3>
-                        <p class="part">anymore</p>
-                        <p class="one-liner">이제 친구가 없당</p>
-                    </div>
-                </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/boy4.png" alt="홍길동 프로필">
-                        <span class="badge">Friend</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">홍길동</h3>
-                        <p class="part">anymore</p>
-                        <p class="one-liner">이제 친구가 없당</p>
-                    </div>
-                </article>
-
-                <article class="card-summary">
-                    <div class="image-wrapper">
-                        <img src="/media/boy4.png" alt="홍길동 프로필">
-                        <span class="badge">Friend</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">홍길동</h3>
-                        <p class="part">anymore</p>
-                        <p class="one-liner">이제 친구가 없당</p>
-                    </div>
-                </article>
             </div>
-        </section>      
+        </section>
+
+        <section class="detail-section">
+            <div id="detail-list" class="detail-list"></div>
+        </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
