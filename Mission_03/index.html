@@ -9,11 +9,48 @@
 <body>
     <main class="dashboard">
         <section class="control-section">
-            <div class="control-buttons">
-                <button id="add-btn">아기 사자 추가</button>
-                <button id="delete-btn">마지막 아기 사자 삭제</button>
+            <div class="control-row">
+                <div class="control-buttons">
+                    <button id="add-btn">아기 사자 추가</button>
+                    <button id="delete-btn">마지막 아기 사자 삭제</button>
+                </div>
+                <p class="count-text">총 <span id="total-count">1</span>명</p>
             </div>
-            <p class="count-text">총 <span id="total-count">0</span>명</p>
+            <hr>
+            <div class="control-row">
+                <div class="control-buttons">
+                    <button id="add-random-1">랜덤 1명 추가</button>
+                    <button id="add-random-5">랜덤 5명 추가</button>
+                    <button id="refresh-all">전체 새로고침</button>
+                </div>
+                <div class="status-group">
+                    <span id="api-status" class="count-text">준비 완료</span>
+                    <button id="retry-btn" class="hidden">재시도</button>
+                </div>
+            </div>
+            <hr>
+            <div class="control-row">
+                <div class="option-item">
+                    <label>파트</label>
+                    <select id="filter-part">
+                        <option value="전체">전체</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Design">Design</option>
+                    </select>
+                </div>
+                <div class="option-item">
+                    <label>정렬</label>
+                    <select id="sort-order">
+                        <option value="newest">최신추가순</option>
+                        <option value="name">이름순</option>
+                    </select>
+                </div>
+                <div class="option-item search-box">
+                    <label>검색</label>
+                    <input type="text" id="search-name" placeholder="이름으로 검색">
+                </div>
+            </div>
         </section>
 
         <section id="form-section" class="form-section hidden">
@@ -31,33 +68,22 @@
                 <input type="text" id="form-one-liner" placeholder="한 줄 소개">
                 <textarea id="form-intro" placeholder="자기소개"></textarea>
                 <div class="form-group">
-                    <input type="email" id="form-email" placeholder="이메일">
-                    <input type="tel" id="form-phone" placeholder="전화번호">
+                    <input type="email" id="form-email" placeholder="Email">
+                    <input type="tel" id="form-phone" placeholder="Phone">
                 </div>
-                <input type="text" id="form-website" placeholder="웹사이트">
+                <input type="text" id="form-website" placeholder="Website">
                 <input type="text" id="form-motto" placeholder="한 마디">
                 
-                <div class="form-btns">
-                    <button type="submit" id="submit-btn">추가하기</button>
+                <div class="form-btns" style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+                    <button type="button" id="random-fill-btn">랜덤 값 채우기</button>
+                    <button type="submit">추가하기</button>
                     <button type="button" id="cancel-btn">취소</button>
                 </div>
             </form>
         </section>
 
         <section class="summary-section">
-            <div id="summary-grid" class="summary-grid">
-                <article class="card-summary me">
-                    <div class="image-wrapper">
-                        <img src="/media/girl1.png" alt="박효연">
-                        <span class="badge">HTML/CSS</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="name">박효연</h3>
-                        <p class="part">Frontend</p>
-                        <p class="one-liner">이건 나</p>
-                    </div>
-                </article>
-            </div>
+            <div id="summary-grid" class="summary-grid"></div>
         </section>
 
         <section class="detail-section">
